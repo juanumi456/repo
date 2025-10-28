@@ -11,7 +11,7 @@
 	<groupId>com.miaplicacion</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>demo-mixto</name>
 	<description>API Spring Boot</description>
 	<url/>
 	<licenses>
