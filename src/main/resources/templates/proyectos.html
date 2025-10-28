@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Proyectos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Proyectos</h1>
+        <div class="links">
+            <a href="/proyectos/new">Nuevo Proyecto</a>
+            <a href="/empleados">Ver Empleados</a>
+            <a href="/proyectos/export/excel" class="export-btn">Exportar Excel</a>
+            <a href="/proyectos/export/pdf" class="export-btn">Exportar PDF</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" style="background: none; border: none; color: #01161e; text-decoration: underline; cursor: pointer;">Cerrar Sesión</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Empleado</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="proyecto : ${proyectos}">
+                    <td th:text="${proyecto.empleadoId}"></td>
+                    <td th:text="${proyecto.nombre}"></td>
+                    <td th:text="${proyecto.descripcion}"></td>
+                    <td class="actions">
+                        <a th:href="@{/proyectos/{id}/edit(id=${proyecto.id})}">Editar</a>
+                        <a th:href="@{/proyectos/{id}/delete(id=${proyecto.id})}" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

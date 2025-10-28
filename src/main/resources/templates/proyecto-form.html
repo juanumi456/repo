@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 th:if="${proyecto.id == null}">Nuevo Proyecto</h1>
+        <h1 th:if="${proyecto.id != null}">Editar Proyecto</h1>
+        <form th:action="${proyecto.id == null} ? '/proyectos' : '/proyectos/' + ${proyecto.id}" th:object="${proyecto}" method="post">
+            <input type="hidden" th:field="*{id}" th:if="${proyecto.id != null}" />
+            <div class="form-group">
+                <label>Empleado:</label>
+                <select th:field="*{empleadoId}" required>
+                    <option value="">Seleccionar Empleado</option>
+                    <option th:each="empleado : ${empleados}" th:value="${empleado.id}" th:text="${empleado.id + ' - ' + empleado.nombre}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" th:field="*{nombre}" required />
+            </div>
+            <div class="form-group">
+                <label>Descripción:</label>
+                <textarea th:field="*{descripcion}" required></textarea>
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+        <div class="links">
+            <a href="/proyectos">Volver</a>
+        </div>
+    </div>
+</body>
+</html>

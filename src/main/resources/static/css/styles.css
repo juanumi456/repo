@@ -1,0 +1,156 @@
+/* Paleta: #3e78b2, #004ba8, #4a525a, #24272b, #191924 */
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Estilo general ===== */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #191924;
+    color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* ===== Contenedor ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: #24272b;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Títulos ===== */
+h1 {
+    color: #3e78b2;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    border-bottom: 2px solid #004ba8;
+    padding-bottom: 10px;
+}
+
+/* ===== Tablas ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #004ba8;
+    color: #f1f1f1;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #4a525a;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2d2f33;
+}
+
+tbody tr:hover {
+    background-color: #3e78b2;
+    color: #ffffff;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* ===== Links y botones ===== */
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3e78b2;
+    color: #f8f9fa;
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #004ba8;
+    transform: translateY(-2px);
+}
+
+/* Botones de acción */
+.actions a {
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* ===== Formularios ===== */
+form {
+    background: #2d2f33;
+    padding: 20px;
+    border-radius: 10px;
+    color: #f1f1f1;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    display: block;
+    color: #3e78b2;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4a525a;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 5px;
+    background-color: #191924;
+    color: #f1f1f1;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+button {
+    background-color: #004ba8;
+    color: #f1f1f1;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #3e78b2;
+    transform: translateY(-2px);
+}
+
+/* ===== Navegación de enlaces ===== */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}

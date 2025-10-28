@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Empleados</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Empleados</h1>
+        <div class="links">
+            <a href="/empleados/new">Nuevo Empleado</a>
+            <a href="/proyectos">Ver Proyectos</a>
+            <a href="/empleados/export/excel" class="export-btn">Exportar Excel</a>
+            <a href="/empleados/export/pdf" class="export-btn">Exportar PDF</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" style="background: none; border: none; color: #01161e; text-decoration: underline; cursor: pointer;">Cerrar Sesión</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cargo</th>
+                    <th>Salario</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="empleado : ${empleados}">
+                    <td th:text="${empleado.id}"></td>
+                    <td th:text="${empleado.nombre}"></td>
+                    <td th:text="${empleado.cargo}"></td>
+                    <td th:text="${empleado.salario}"></td>
+                    <td th:text="${empleado.email}"></td>
+                    <td class="actions">
+                        <a th:href="@{/empleados/{id}/edit(id=${empleado.id})}">Editar</a>
+                        <a th:href="@{/empleados/{id}/delete(id=${empleado.id})}" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
